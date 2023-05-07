@@ -1,36 +1,36 @@
 import sympy as sp
+from math import *
 print("{:^90}".format("Metodo de newton"))
 
-x =sp.symbols('x')
+x=sp.symbols("x")
 
-f = input('Ingrese la funcion: ')
+f = input("Escriba su funcion: ")
+
+print("")
+#Esto calcula la derivada de la funcion
 
 df = sp.diff(f)
 
-f = sp.lambdify(x, df)
+#Esto cambia el string a funcion matematica
 
+f = sp.lambdify(x, f)
 df = sp.lambdify(x, df)
 
+n = int(input("Ingrese el numero de iteraciones que desea realizar: "))
+
 x0 = float(input('Escribe el valor inicial: '))
-print("")
 
-n = int(input('Cuantas iteraciones desea realizar?: '))
+tol = float(input("Ingrese la tolerancia: "))
 
-print("")
+print("{:^30} {:^30} {:^30} {:^30}".format("Iteracion", "F(p[n])", "f'(P)[n]", "Raiz"))
 
-tol = input('Escriba el error maximo permitido: ')
 
-print("")
-
-tol = float(tol)
-
-print("{:^15} {:^15}".format("Iteracion" , "X") )
 for k in range(n):
-        x1 = x0 - (f(x0) / df(x0))
-        if (abs(x1 - x0) < tol):
-                print("{:^15} {:^15}".format(k + 1, x1, end=' '))
+        x1 = x0 - f(x0)/df(x0)
+        if(abs(x1-x0)<tol):
+                print("{:^30} {:^30} {:^30} {:^30}".format(k+1, f(x0), df(x0), x1))
         x0=x1
-        print("{:^15} {:^15}".format(k+1, x1))
+        print("{:^30} {:^30} {:^30} {:^30}".format(k+1, f(x0), df(x0), x1))
 
 
 
