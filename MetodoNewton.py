@@ -1,5 +1,5 @@
 import sympy as sp
-print("{:^90}".format("Metodo de newton"))
+print("{:^120}".format("Metodo de newton"))
 
 x=sp.symbols("x")
 
