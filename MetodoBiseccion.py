@@ -14,7 +14,7 @@ a = float(input("Ingresa el valor de a: "))
 print("")
 b = float(input("Ingresa el valor de b: "))
 print("")
-crit = float(input("Ingresa el valor de tolerancia: "))
+crit = 1e-6
 
 i = 0
 ea = 1

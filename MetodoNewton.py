@@ -1,5 +1,4 @@
 import sympy as sp
-from math import *
 print("{:^90}".format("Metodo de newton"))
 
 x=sp.symbols("x")
@@ -20,7 +19,7 @@ n = int(input("Ingrese el numero de iteraciones que desea realizar: "))
 
 x0 = float(input('Escribe el valor inicial: '))
 
-tol = float(input("Ingrese la tolerancia: "))
+tol = 1e-6
 
 print("{:^30} {:^30} {:^30} {:^30}".format("Iteracion", "F(p[n])", "f'(P)[n]", "Raiz"))
 
