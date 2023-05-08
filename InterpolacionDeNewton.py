@@ -36,6 +36,7 @@ for j in range(1, g+1):
     for i in range(j):
         termino *= (valor - x[i])
     resultado += dif_div[0][j] * termino
+    print(resultado)
 
 # Imprimir el resultado
 print("El valor de f(x) para F = {} es {}".format(valor, resultado))

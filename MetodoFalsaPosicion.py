@@ -14,7 +14,7 @@ iteraciones = int(input("Ingrese el numero de iteraciones que desea realizar: ")
 print("")
 a = float(input("Ingrese el valor inicial de F(xi): "))
 print("")
-b = float(input("Ingrese el valor inicial de F(xF): "))
+b = float(input("Ingrese el valor inicial de F(xu): "))
 print("")
 tol = 1e-6
 print("")
@@ -30,7 +30,7 @@ fb = f(b)
 if fa * fb >= 0:
     raise ValueError("El intervalo inicial no contiene una raíz.")
 
-print("{:^30} {:^30} {:^30} {:^30} {:^30} {:^30} {:^30}".format("Iteracion", "a", "b", "c", "fa", "fb", "fc"))
+print("{:^30} {:^30} {:^30} {:^30} {:^30} {:^30} {:^30}".format("Iteracion", "Xi", "Xu", "Xr", "f(Xi)", "f(Xr)", "f(Xi)f(xr)"))
 
 for k in range(iteraciones):
 
