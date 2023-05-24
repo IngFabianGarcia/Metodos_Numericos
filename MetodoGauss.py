@@ -53,63 +53,34 @@ def MetodoGauss(a,b):
     for respuesta in range(n):
         print(f"X{respuesta} es {x[respuesta]}")
 
-
-
-
-
-
-
 # Pedir al usuario los datos de entrada
 print("{:^120}".format("Método de Gauss"))
-""""
-datos = int(input("Ingrese la cantidad de datos que tendra su matriz: "))
 
-datoscons = int(input("Ingrese la cantidad de datos que tendra la constante: "))
+#Pide al usuario la matriz
+filas = int(input("Cuantas filas tendra:"))
+columnas = int(input("Cuantas columnas tendra:"))
 
-variable1 = []
-variable2 = []
-variable3 = []
+print("Escribe tu matriz en una linea y separala por espacios: ")
 
-constante1 = []
-constante2 = []
-constante3 = []
+#Aqui se crea el array
+datos = list(map(int, input().split()))
+
+#Se crea la matriz principal
+Matriz = np.array(datos).reshape(filas, columnas)
+
+#Matriz de constantes
+filas = int(input("Cuantas filas tendra:"))
+columnas = int(input("Cuantas columnas tendra:"))
+
+print("Escribe tu matriz en una linea y separala por espacios: ")
+datos = list(map(int, input().split()))
+
+ConstanteFuncional = np.array(datos).reshape(filas, columnas)
 
 
-#Ingresa los datos de los 3 vectores
-for i in range(datos):
-    variable1.append(int(input("Ingrese el valor {} de la primera fila: ".format(i+1))))
-    print("")
-for i in range(datos):
-    variable2.append(int(input("Ingrese el valor {} de la segunda fila: ".format(i+1))))
-    print("")
-for i in range(datos):
-    variable3.append(int(input("Ingrese el valor {} de la tercera fila: ".format(i+1))))
-    print("")
-
-#Ingresa los 3 datos de la constante
-for i in range(datoscons):
-    constante1.append(int(input("Ingrese el valor {} de la constante 1: ".format(i+1))))
-    print("")
-for i in range(datoscons):
-    constante2.append(int(input("Ingrese el valor {} de la constante 2: ".format(i+1))))
-    print("")
-for i in range(datoscons):
-    constante3.append(int(input("Ingrese el valor {} de la constante 3: ".format(i+1))))
-    print("")
-
-#Convertir los Matriz ya funcionales al igual que la constante
-Matriz = np.array([[variable1], [variable2], [variable3]])
-ConstanteFuncional = np.array([[constante1], [constante2], [constante3]])
-
-print(Matriz)
-print(ConstanteFuncional)
-
-#Se cambia lo que se trabaja desde el codigo ya que los inputs tienen error ya que no coinciden en tamaño las matrices
-#a pesar de que se pongan del mismo tamaño :c
-"""
-
+'''
 Matriz = np.array([[2, 6, 1], [1, 2, -1], [5, 7, -4]])
 ConstanteFuncional= np.array([[7], [-1], [9]])
-
+'''
 MetodoGauss(Matriz, ConstanteFuncional)
 

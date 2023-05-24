@@ -1,4 +1,2 @@
-import sympy as sp
-print("{:^120}".format("Metodo de newton"))
+print("{:^120}".format("Metodo de Horner"))
 
-print("este bro no se quizo hacer :v")

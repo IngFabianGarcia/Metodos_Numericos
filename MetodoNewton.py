@@ -9,17 +9,20 @@ print("")
 #Esto calcula la derivada de la funcion
 
 df = sp.diff(f)
+print(df)
 
 #Esto cambia el string a funcion matematica
 
 f = sp.lambdify(x, f)
 df = sp.lambdify(x, df)
 
+
+
 n = int(input("Ingrese el numero de iteraciones que desea realizar: "))
 
 x0 = float(input('Escribe el valor inicial: '))
 
-tol = 1e-6
+tol = 0.0000001
 
 print("{:^30} {:^30} {:^30} {:^30}".format("Iteracion", "F(p[n])", "f'(P)[n]", "Raiz"))
 

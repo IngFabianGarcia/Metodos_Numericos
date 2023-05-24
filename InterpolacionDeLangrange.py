@@ -1,41 +1,66 @@
-from sympy import *
-init_printing()
+import numpy as np
+import sympy as sympys
 
-# Pedir al usuario los datos de entrada
-print("{:^120}".format("Método de interpolacion de Lagrange"))
-g = int(input("Ingrese el grado del polinomio: "))
-print("")
+print("{:^120}".format("Metodo de Lagrange"))
 
-valor = float(input("Ingrese el valor de x: "))
+#   0 ,  -3,    4
+#   -2,   7,    14
 
-print("")
+print("X")
+filas = int(input("Cuantas filas tendra:"))
+columnas = int(input("Cuantas columnas tendra:"))
+print("Escribe tu matriz en una linea y separala por espacios: ")
+#Aqui se crea el array
+datos = list(map(int, input().split()))
+#Se crea la matriz principal
+xi = np.array(datos)
+print(xi)
 
-x = []
-y = []
-
-for i in range(g+1):
-    x.append(float(input("Ingrese el valor de X{}: ".format(i))))
-    print("")
-for i in range(g+1):
-    y.append(float(input("Ingrese el valor de Y{}: ".format(i))))
-    print("")
-
-# Calcular el valor de f(x) usando el método de Lagrange
-
-resultado = 0
-
-print("{:^30}" "{:^60}".format("Operacion", "x"))
-
-for i in range(g+1):
-    termino = y[i]
-    for j in range(g+1):
-        if i != j:
-            termino *= (valor - x[j]) / (x[i] - x[j])
-    resultado += termino
-    print("{:^30}" "{:^60}".format(i+1, resultado))
-
-# Imprimir el resultado
 print("")
 print("")
-print("")
-print("El valor de f(x) para x = {} es {}".format(valor, resultado))
+
+#Pide al usuario la matriz
+print("Y")
+filas = int(input("Cuantas filas tendra:"))
+columnas = int(input("Cuantas columnas tendra:"))
+print("Escribe tu matriz en una linea y separala por espacios: ")
+#Aqui se crea el array
+datos = list(map(int, input().split()))
+#Se crea la matriz principal
+fi = np.array(datos)
+print(fi)
+
+print(f'Su matris x es:{xi} y la matris y es: {fi}')
+
+n = len(xi)
+x = sympys.Symbol('x')
+polinomio = 0
+divisorL = np.zeros(n, dtype=float)
+for i in range(0, n, 1):
+
+    # Termino de Lagrange
+    numerador = 1
+    denominador = 1
+    for j in range(0, n, 1):
+        if (j != i):
+            numerador = numerador * (x - xi[j])
+            denominador = denominador * (xi[i] - xi[j])
+    terminoLi = numerador / denominador
+
+    polinomio = polinomio + terminoLi * fi[i]
+    divisorL[i] = denominador
+
+# simplifica el polinomio
+polisimple = polinomio.expand()
+
+# para evaluación numérica
+px = sympys.lambdify(x, polisimple)
+print('')
+print('')
+print('valores de fi: ', fi)
+print('divisores en L(i): ', divisorL)
+print()
+print('Polinomio de Lagrange, expresiones: ')
+print(polinomio)
+print()
+print(f'Polinomio de Lagrange: {polisimple}')
