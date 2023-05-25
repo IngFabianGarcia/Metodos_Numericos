@@ -77,7 +77,6 @@ datos = list(map(int, input().split()))
 
 ConstanteFuncional = np.array(datos).reshape(filas, columnas)
 
-
 '''
 Matriz = np.array([[2, 6, 1], [1, 2, -1], [5, 7, -4]])
 ConstanteFuncional= np.array([[7], [-1], [9]])
