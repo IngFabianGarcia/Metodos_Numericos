@@ -10,7 +10,7 @@ def secant(x0, x1, e, N):
     Condicion = True
     while Condicion:
         if f(x0) == f(x1):
-            print('Divide by zero error!')
+            print('No se puede dividir por 0 >:c')
             break
 
         x2 = x0 - (x1 - x0) * f(x0) / (f(x1) - f(x0))

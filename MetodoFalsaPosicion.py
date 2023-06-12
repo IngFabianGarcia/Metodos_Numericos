@@ -16,7 +16,7 @@ a = float(input("Ingrese el valor inicial de F(xi): "))
 print("")
 b = float(input("Ingrese el valor inicial de F(xu): "))
 print("")
-tol = 1e-8
+tol = 0.0001
 print("")
 #Esto se utiliza para no sobrecargar la memoria
 max_iter = 100

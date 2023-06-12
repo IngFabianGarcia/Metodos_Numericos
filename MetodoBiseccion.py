@@ -14,7 +14,7 @@ a = float(input("Ingresa el valor de a: "))
 print("")
 b = float(input("Ingresa el valor de b: "))
 print("")
-crit = 0.00001
+crit = 0.0001
 
 i = 0
 ea = 1
